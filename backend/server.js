@@ -4,8 +4,9 @@ const bcrypt = require('bcrypt');
 const cors = require('cors');
 const knex = require('knex');
 
-const signin = require('./controllers/signing');
 const register = require('./controllers/register');
+const signin = require('./controllers/signin');
+
 
 const db = knex({
         client: 'pg',
@@ -16,8 +17,6 @@ const db = knex({
         database : 'face-recognition'
         }
 });
-
-const saltRounds = 10;
 
 const app = express();
 
