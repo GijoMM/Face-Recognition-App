@@ -99,6 +99,7 @@ class App extends React.Component {
           .then(count => {
             this.setState(Object.assign(this.state.user, { entrie: count}))
           })
+          .catch(console.log)
         }
         this.displayFaceBox(this.calculateFaceLocation(response))    
       })
