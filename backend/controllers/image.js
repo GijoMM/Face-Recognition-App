@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../.env' })
+require('dotenv').config({ path: '..heroku git:remote -a/.env' })
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
