@@ -14,10 +14,11 @@ const db = knex({
         connection: {
         host : '127.0.0.1',
         user : 'postgres',
-        password : 'your_database_password',
+        password : '',
         database : 'face-recognition'
         }
 });
+
 
 const app = express();
 
