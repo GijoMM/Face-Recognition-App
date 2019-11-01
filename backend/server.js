@@ -20,7 +20,33 @@ const db = knex({
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
+// Allow CORS
+const allowCrossDomain = function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,authorization,");
+
+    res.header(
+        "Access-Control-Allow-Credentials",
+        "true"
+    );
+    res.header(
+        "Access-Control-Allow-Methods",
+        "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+    );
+
+      res.setHeader(
+          "Access-Control-Allow-Headers",
+          // You must include "authorization" and allow access on Header if you use CORS and credentials like Cookie
+          "Access-Control-Allow-Headers, Origin,Accept,authorization, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+
+      // res.options('*', (req, res) => {
+      //   res.sendStatus(200);
+      // });
+
+  // Don't delete this "next()" otherwise server will not return any response.. somehow:(
+  next();
+}
+app.use(allowCrossDomain);
 
 app.get('/', (req, res) => {res.send(db.users)})
 app.post('/signin', signin.handleSignin(db, bcrypt))
