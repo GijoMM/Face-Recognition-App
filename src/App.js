@@ -75,7 +75,7 @@ class App extends React.Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
-      fetch('https://glacial-anchorage-91004.herokuapp.com/imageurl', {
+      fetch('https://image-face-recognition-app.herokuapp.com/imageurl', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -85,7 +85,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://glacial-anchorage-91004.herokuapp.com/image', {
+          fetch('https://image-face-recognition-app.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
