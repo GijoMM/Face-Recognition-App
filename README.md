@@ -10,8 +10,8 @@ This APP built with React, Node.js, Express.js, as well as a PosrtgreSQL is in c
 ## Technologies Used
 
 - React
-- Nodejs
+- Node.js
 - Bcrypt
-- Postgresql
+- PostgreSQL
 - knex
-- Express
+- Express.js
