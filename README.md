@@ -1,6 +1,6 @@
 # Face-Recognition-App
 
-Face-Recognition-App is a web app that uses the Clarifai API to locate a face in a picture. 
+Face-Recognition-App is a web app using the MVC pattern that uses the Clarifai API to locate a face in a picture. 
 
 [Face Recognition APP](https://image-face-recognition-front.herokuapp.com/)
 
